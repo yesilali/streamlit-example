@@ -77,7 +77,7 @@ def gununrandevu():
     c=conn.cursor()
     bugun=datetime.date.today()
     c.execute("SELECT * FROM randevular WHERE tarih=? ",(bugun,))
-    sonuc=c.fetchone()
+    sonuc=c.fetchall()
     tablo=pd.DataFrame(sonuc)
     tablo=st.table(tablo)
     return tablo
